@@ -1,0 +1,14 @@
+name: GitHub Actions Demo # The name of your workflow
+
+on: [push] # Defines the event that triggers the workflow, in this case, any push to the repository
+
+jobs: # Defines the jobs to be run
+  build: # This is a job ID, you can name it anything (e.g., build, test, deploy)
+    runs-on: ubuntu-latest # Specifies the type of machine to run the job on, here it's the latest version of Ubuntu
+
+    steps: # A sequence of tasks that will be executed as part of the job
+    - name: Checkout Repository # A human-readable name for this step, which checks out your repository under $GITHUB_WORKSPACE
+      uses: actions/checkout@v2 # Uses the checkout action to check out the repository code
+
+    - name: Run a Script # Another step, this time to execute a simple script
+      run: echo "Hello, GitHub Actions!" # The command to run, in this case, just echoing a string to the console
